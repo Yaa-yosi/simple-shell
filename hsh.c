@@ -36,7 +36,7 @@ int main(void)
 		}
 		if (child_pid == 0)
 		{
-			if (execve(array[0], array, NULL) == -1)
+			if (execve(array[0], array, environ) == -1)
 			{
 				perror("error");
 				exit(EXIT_FAILURE);
