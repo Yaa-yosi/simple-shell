@@ -32,7 +32,7 @@ char *_getenv(info_t *info, const char *name)
 }
 
 /**
- * print_list - prints all elements of a list
+ * print_envList - prints all elements of a list
  * @h: pointer to the first node
  * Return: number of nodes
  */

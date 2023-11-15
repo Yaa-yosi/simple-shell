@@ -3,6 +3,7 @@
  * add_node_end - adds not at the end of list
  * @head: double pointer to list
  * @str: string to be duplicated
+ * @n: nnnnnnnnn
  * Return: address of node, else NULL
  */
 list_t *add_node_end(list_t **head, const char *str, int n)

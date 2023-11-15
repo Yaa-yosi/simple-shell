@@ -4,8 +4,8 @@
  *             or modify an existing one
  * @info: Structure containing potential arguments. Used to maintain
  *        constant function prototype.
- * @var: the string env var property
- * @value: the string env var value
+ * @envVar: the string env var property
+ * @envVal: the string env var value
  *  Return: Always 0
  */
 int _setenv(info_t *info, char *envVar, char *envVal)
@@ -37,7 +37,7 @@ int _setenv(info_t *info, char *envVar, char *envVal)
 
 		}
 		node = node->next;
-	}	
+	}
 	add_node_end(&(info->env), buff, 0);
 	free(buff);
 	info->env_flag = 1;

@@ -7,33 +7,33 @@
  */
 char **list_to_array(list_t *head)
 {
-        list_t *node = head;
-        size_t k = list_len(head), i, j;
-        char **array;
-        char *string;
+	list_t *node = head;
+	size_t k = list_len(head), i, j;
+	char **array;
+	char *string;
 
-        if (!head || !k)
-                return (NULL);
-        array = malloc(sizeof(char *) * (k + 1));
-        if (!array)
-                return (NULL);
-        for (i = 0; node; i++)
-        {
-                string = malloc(strlen(node->str) + 1);
-                if (!string)
-                {
-                        for (j = 0; j < i; j++)
-                                free(array[j]);
-                        free(array);
-                        return (NULL);
-                }
+	if (!head || !k)
+		return (NULL);
+	array = malloc(sizeof(char *) * (k + 1));
+	if (!array)
+		return (NULL);
+	for (i = 0; node; i++)
+	{
+		string = malloc(strlen(node->str) + 1);
+		if (!string)
+		{
+			for (j = 0; j < i; j++)
+				free(array[j]);
+			free(array);
+			return (NULL);
+		}
 
-                strcpy(string, node->str);
-                array[i] = string;
-                node = node->next;
-        }
-        array[i] = NULL;
-        return (array);
+		strcpy(string, node->str);
+		array[i] = string;
+		node = node->next;
+	}
+	array[i] = NULL;
+	return (array);
 }
 
 /**
