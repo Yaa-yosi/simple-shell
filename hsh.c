@@ -1,10 +1,6 @@
 #include "shell.h"
 /**
- *
- *
- *
- *
- *
+ * main - entry point
  */
 int main(void)
 {
@@ -15,8 +11,8 @@ int main(void)
 	char *token;
 	int i = 0;
 	size_t n = 0;
-	
-	while(1)
+
+	while (1)
 	{
 		kelm_prompt();
 		getline(&buff, &n, stdin);
@@ -30,7 +26,8 @@ int main(void)
 			token = strtok(NULL, "\t\n");
 			i++;
 		}
-
+		if (strcmp((array[0]), "exit") == 0)
+		       break;	
 		child_pid = fork();
 		if (child_pid == -1)
 		{
@@ -45,12 +42,10 @@ int main(void)
 				exit(EXIT_FAILURE);
 			}
 		}
-
 		else
 			wait(&status);
 		i = 0;
 		free(array);
 	}
-			
 	return (0);
 }
