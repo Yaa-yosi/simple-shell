@@ -16,16 +16,17 @@ int main(void)
 	{
 		kelm_prompt();
 		getline(&buff, &n, stdin);
-		token = strtok(buff, "\t\n");
+		token = strtok(buff, " \n");
 		array = malloc(sizeof(char *) * 1024);
 		if (!array)
 			return (-1);
 		while (token)
 		{
 			array[i] = token;
-			token = strtok(NULL, "\t\n");
+			token = strtok(NULL, " \n");
 			i++;
 		}
+		array[i] = NULL;
 		if (strcmp((array[0]), "exit") == 0)
 		       break;	
 		child_pid = fork();
