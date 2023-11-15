@@ -21,22 +21,22 @@ extern char **environ;
  */
 typedef struct list_str
 {
-        int num;
-        char *str;
-        struct list_str *next;
+	int num;
+	char *str;
+	struct list_str *next;
 } list_t;
 
 /**
- * parseinfo - structure containing command arguments for shell
+ * struct parseinfo - structure containing command arguments for shell
  * @env:linked list local copy of environ
  * @environ:custom modified copy of environ from LL env
  * @env_flag:on if environ was changed
  */
 typedef struct parseinfo
 {
-        list_t *env;
-        char **environ;
-        int env_flag;
+	list_t *env;
+	char **environ;
+	int env_flag;
 } info_t;
 
 
